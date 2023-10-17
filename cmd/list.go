@@ -6,8 +6,8 @@ import (
 	"github.com/Tr1xN/godo/todo"
 )
 
-func checkmark(isDone *bool) string {
-	if *isDone {
+func checkmark(isDone bool) string {
+	if isDone {
 		return "☑"
 	} else {
 		return "☐"
@@ -21,7 +21,7 @@ func taskListToString(tl *todo.TaskList) string {
 
 	var output string
 	for i, task := range *tl {
-		output += fmt.Sprintf("\t%s %d. %s\n", checkmark(&task.IsDone), i+1, task.Label)
+		output += fmt.Sprintf("\t%s %d. %s\n", checkmark(task.IsDone), i+1, task.Label)
 	}
 	return output
 }
