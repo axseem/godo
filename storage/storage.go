@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/Tr1xN/godo/todo"
+	"github.com/axsbee/godo/todo"
 )
 
 func Save(fileName string, tl *todo.TaskList) error {

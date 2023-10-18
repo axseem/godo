@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Tr1xN/godo/cmd"
-	"github.com/Tr1xN/godo/storage"
-	"github.com/Tr1xN/godo/todo"
+	"github.com/axsbee/godo/cmd"
+	"github.com/axsbee/godo/storage"
+	"github.com/axsbee/godo/todo"
 )
 
 func main() {

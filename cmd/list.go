@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/Tr1xN/godo/todo"
+	"github.com/axsbee/godo/todo"
 )
 
 func checkmark(isDone bool) string {
