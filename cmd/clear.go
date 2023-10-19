@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/axsbee/godo/storage"
-	"github.com/axsbee/godo/todo"
+	"github.com/axseem/godo/storage"
+	"github.com/axseem/godo/todo"
 )
 
 func Clear(tl *todo.TaskList) {

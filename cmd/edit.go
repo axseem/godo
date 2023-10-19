@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/axsbee/godo/storage"
-	"github.com/axsbee/godo/todo"
+	"github.com/axseem/godo/storage"
+	"github.com/axseem/godo/todo"
 )
 
 func Edit(tl *todo.TaskList) {

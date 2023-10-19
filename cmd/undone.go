@@ -5,8 +5,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/axsbee/godo/storage"
-	"github.com/axsbee/godo/todo"
+	"github.com/axseem/godo/storage"
+	"github.com/axseem/godo/todo"
 )
 
 func Undone(tl *todo.TaskList) {

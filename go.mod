@@ -1,3 +1,3 @@
-module github.com/axsbee/godo
+module github.com/axseem/godo
 
 go 1.21.2

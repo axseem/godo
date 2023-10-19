@@ -40,7 +40,7 @@ To build "godo" and use it as a standalone application, follow these steps:
 1. Ensure you have Go installed on your system.
 2. Run the following commands to build "godo":
 ```
-git clone github.com/axsbee/godo
+git clone github.com/axseem/godo
 cd godo
 go build
 ```
