@@ -20,7 +20,7 @@ Commands:
 	rm [index]		remove particular task
 	undo [index]		mark task as not completed
 	wipe			remove all tasks
-	`
+`
 
 	fmt.Println(help)
 }
