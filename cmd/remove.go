@@ -21,7 +21,7 @@ func Remove(tl *todo.TaskList) {
 			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)
 		}
-		il = append(il, i)
+		il = append(il, i-1)
 	}
 	if err := tl.Remove(il); err != nil {
 		fmt.Fprintln(os.Stderr, err)
