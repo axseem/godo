@@ -29,31 +29,31 @@ func (tl *TaskList) Add(label string) {
 func (tl *TaskList) Remove(il []int) error {
 	sort.Sort(sort.Reverse(sort.IntSlice(il)))
 	for _, i := range il {
-		if i <= 0 || i > len(*tl) {
+		if i < 0 || i >= len(*tl) {
 			return fmt.Errorf("item %d dose not exist", i)
 		}
-		*tl = append((*tl)[:i-1], (*tl)[i:]...)
+		*tl = append((*tl)[:i], (*tl)[i+1:]...)
 	}
 
 	return nil
 }
 
 func (tl *TaskList) Edit(i int, label string) error {
-	if i <= 0 || i > len(*tl) {
+	if i < 0 || i >= len(*tl) {
 		return fmt.Errorf("item %d dose not exist", i)
 	}
-	(*tl)[i-1].Label = label
+	(*tl)[i].Label = label
 
 	return nil
 }
 
 func (tl *TaskList) Done(il []int) error {
 	for _, i := range il {
-		if i <= 0 || i > len(*tl) {
+		if i < 0 || i >= len(*tl) {
 			return fmt.Errorf("item %d dose not exist", i)
 		}
-		(*tl)[i-1].IsDone = true
-		(*tl)[i-1].DoneAt = time.Now()
+		(*tl)[i].IsDone = true
+		(*tl)[i].DoneAt = time.Now()
 	}
 
 	return nil
@@ -61,11 +61,11 @@ func (tl *TaskList) Done(il []int) error {
 
 func (tl *TaskList) Undone(il []int) error {
 	for _, i := range il {
-		if i <= 0 || i > len(*tl) {
+		if i < 0 || i >= len(*tl) {
 			return fmt.Errorf("item %d dose not exist", i)
 		}
-		(*tl)[i-1].IsDone = false
-		(*tl)[i-1].DoneAt = time.Time{}
+		(*tl)[i].IsDone = false
+		(*tl)[i].DoneAt = time.Time{}
 	}
 
 	return nil
