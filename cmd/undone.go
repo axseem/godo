@@ -14,19 +14,18 @@ func Undone(tl *todo.TaskList) {
 		fmt.Println("no task index provided!")
 		os.Exit(1)
 	}
-	var il []int
 	for _, i := range os.Args[2:] {
 		i, err := strconv.Atoi(i)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)
 		}
-		il = append(il, i-1)
+		if err := tl.Undone(i - 1); err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
 	}
-	if err := tl.Undone(il); err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
-	}
+
 	if err := storage.Save("db.json", tl); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
