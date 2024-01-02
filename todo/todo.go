@@ -26,7 +26,7 @@ func (tl *TaskList) Add(label string) {
 	*tl = append(*tl, t)
 }
 
-func (tl *TaskList) Remove(il []int) error {
+func (tl *TaskList) Remove(il ...int) error {
 	sort.Sort(sort.Reverse(sort.IntSlice(il)))
 	for _, i := range il {
 		if i < 0 || i >= len(*tl) {
@@ -47,7 +47,7 @@ func (tl *TaskList) Edit(i int, label string) error {
 	return nil
 }
 
-func (tl *TaskList) Done(il []int) error {
+func (tl *TaskList) Done(il ...int) error {
 	for _, i := range il {
 		if i < 0 || i >= len(*tl) {
 			return fmt.Errorf("item %d dose not exist", i)
@@ -59,7 +59,7 @@ func (tl *TaskList) Done(il []int) error {
 	return nil
 }
 
-func (tl *TaskList) Undone(il []int) error {
+func (tl *TaskList) Undone(il ...int) error {
 	for _, i := range il {
 		if i < 0 || i >= len(*tl) {
 			return fmt.Errorf("item %d dose not exist", i)
