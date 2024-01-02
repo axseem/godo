@@ -23,7 +23,7 @@ func Remove(tl *todo.TaskList) {
 		}
 		il = append(il, i-1)
 	}
-	if err := tl.Remove(il); err != nil {
+	if err := tl.Remove(il...); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
