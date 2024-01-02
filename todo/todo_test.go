@@ -30,7 +30,7 @@ func TestRemove(t *testing.T) {
 		tl.Add(labels[i])
 	}
 
-	tl.Remove([]int{1, 4})
+	tl.Remove(1, 4)
 
 	if len(*tl) != len(labels)-2 {
 		t.Errorf("wrong length, got: %v, want: %v", len(*tl), len(labels))
@@ -70,7 +70,7 @@ func TestDone(t *testing.T) {
 		tl.Add(labels[i])
 	}
 
-	err := tl.Done([]int{1, 4})
+	err := tl.Done(1, 4)
 	if err != nil {
 		t.Errorf("got error: %v", err)
 	}
@@ -91,10 +91,10 @@ func TestUndone(t *testing.T) {
 	labels := []string{"task1", "task2", "task3", "task4", "task5"}
 	for i := 0; i < len(labels); i++ {
 		tl.Add(labels[i])
-		tl.Done([]int{i})
+		tl.Done(i)
 	}
 
-	err := tl.Undone([]int{1, 4})
+	err := tl.Undone(1, 4)
 	if err != nil {
 		t.Errorf("got error: %v", err)
 	}
@@ -117,7 +117,7 @@ func TestClear(t *testing.T) {
 		tl.Add(labels[i])
 	}
 
-	tl.Done([]int{1, 4})
+	tl.Done(1, 4)
 	tl.Clear()
 
 	wantLabels := []string{"task1", "task3", "task4"}
